@@ -9,11 +9,9 @@ public class CheckToggle : MonoBehaviour
 { 
     [SerializeField] ToggleGroup DificaltToggleGroup;
     public void ToggleChanged()
-    {
-        Date.Dificalt = DificaltToggleGroup.GetFirstActiveToggle().name;
-       
-        
-        
+    {       
+        Text txt = DificaltToggleGroup.GetFirstActiveToggle().transform.Find("Label").GetComponent<Text>();        
+        Date.Dificalt = txt.text;
     }
 
     void Start()
